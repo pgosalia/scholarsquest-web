@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Scholar's Quest</title>
+<meta name="description" content="Get in touch with Scholar's Quest.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">Scholar's Quest</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="siteNav">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="english.html">English</a></li>
+      <li><a href="scheduling.html">Book a Demo</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn btn-login">Student / Parent Login</a>
+  </div>
+</header>
+
+<main>
+  <section class="section narrow">
+    <div class="wrap">
+      <h1>Contact Us</h1>
+      <p>Have questions about our virtual tutoring for Pre-K to Grade 8 in Math and English? Reach out and let us guide you through the learning journey.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:info@scholars.quest">info@scholars.quest</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Phone</h3>
+          <p><a href="tel:+16095178112">(609) 517-8112</a></p>
+        </div>
+      </div>
+      <div class="form-note">
+        <p><strong>Note for setup:</strong> this is a placeholder contact form. Static pages can't process form submissions on their own &mdash; wire this up to a free form service like Formspree or Getform (a few lines of HTML), or simply keep the mailto links above until then.</p>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <label>Name<input type="text" name="name" placeholder="Your name"></label>
+        <label>Email<input type="email" name="email" placeholder="you@example.com"></label>
+        <label>Message<textarea name="message" rows="5" placeholder="Tell us a bit about your child's needs"></textarea></label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="brand">Scholar's Quest</div>
+      <p>Virtual tutoring in Math and English for Pre-K through Grade 8.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <p><a href="mailto:info@scholars.quest">info@scholars.quest</a></p>
+      <p><a href="tel:+16095178112">(609) 517-8112</a></p>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <p><a href="scheduling.html">Book a Demo Class</a></p>
+      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+  <div class="wrap copyright">&copy; <span id="year"></span> Scholar's Quest. All rights reserved.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
