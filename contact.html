@@ -5,74 +5,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Scholar's Quest</title>
 <meta name="description" content="Get in touch with Scholar's Quest.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand">Scholar's Quest</a>
+  <div class="wrap">
+    <a href="index.html" class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
     <nav id="siteNav">
       <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="math.html">Math</a></li>
       <li><a href="english.html">English</a></li>
-      <li><a href="scheduling.html">Book a Demo</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="btn btn-login">Student / Parent Login</a>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-secondary">Parent login</a>
+      <a href="demo.html" class="btn btn-primary">Book a free demo</a>
+    </div>
   </div>
+  <div class="header-divider"></div>
 </header>
 
 <main>
-  <section class="section narrow">
-    <div class="wrap">
-      <h1>Contact Us</h1>
-      <p>Have questions about our virtual tutoring for Pre-K to Grade 8 in Math and English? Reach out and let us guide you through the learning journey.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Email</h3>
-          <p><a href="mailto:info@scholars.quest">info@scholars.quest</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>Phone</h3>
-          <p><a href="tel:+16095178112">(609) 517-8112</a></p>
-        </div>
+
+<section class="section section-top">
+  <div class="max-600">
+    <div class="eyebrow">Contact</div>
+    <h1 style="font-size:clamp(36px,4.6vw,52px);margin-bottom:18px;">Ask us anything</h1>
+    <p style="font-size:17px;color:var(--color-neutral-300);">Questions about grade levels, scheduling, test prep or how we&rsquo;d handle a particular problem. A real person reads every message.</p>
+  </div>
+</section>
+
+<section class="section" style="margin-top:24px;">
+  <div class="split">
+    <div class="contact-list">
+      <div>
+        <div class="label">Email</div>
+        <a href="mailto:info@scholars.quest" class="value">info@scholars.quest</a>
+        <p class="note">Replies within one business day.</p>
       </div>
-      <div class="form-note">
-        <p><strong>Note for setup:</strong> this is a placeholder contact form. Static pages can't process form submissions on their own &mdash; wire this up to a free form service like Formspree or Getform (a few lines of HTML), or simply keep the mailto links above until then.</p>
+      <div class="divider-fade"></div>
+      <div>
+        <div class="label">Phone</div>
+        <a href="tel:+16095178112" class="value">(609) 517-8112</a>
+        <p class="note">Call or text. Fastest for scheduling questions.</p>
       </div>
-      <form class="contact-form" onsubmit="return false;">
-        <label>Name<input type="text" name="name" placeholder="Your name"></label>
-        <label>Email<input type="email" name="email" placeholder="you@example.com"></label>
-        <label>Message<textarea name="message" rows="5" placeholder="Tell us a bit about your child's needs"></textarea></label>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+      <div class="divider-fade"></div>
+      <div>
+        <div class="label">Ready to start?</div>
+        <p style="font-size:14px;color:var(--color-neutral-300);margin:0 0 14px;">Skip the back-and-forth and book the free demo directly.</p>
+        <a href="demo.html" class="btn btn-primary">Book a free demo class</a>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div id="contactSuccess" class="form-success" hidden>
+        <div class="rule"></div>
+        <h2>Message sent</h2>
+        <p>Thanks, we&rsquo;ll reply within one business day.</p>
+        <button class="btn btn-secondary" data-form-reset>Write another</button>
+      </div>
+      <form data-placeholder-form data-success-target="contactSuccess">
+        <h2 style="font-size:24px;margin-bottom:24px;">Send a message</h2>
+        <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" required placeholder="you@example.com"></div>
+        <div class="field"><label for="c-topic">What&rsquo;s this about?</label>
+          <select class="input" id="c-topic">
+            <option>Starting tutoring</option><option>Scheduling</option><option>Test prep</option><option>Pricing</option><option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label for="c-message">Message</label><textarea class="input" id="c-message" rows="5" placeholder="Tell us a bit about your child's grade and what they're finding hard"></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block" style="font-size:15px;padding:12px;">Send message</button>
+        <p class="form-note" style="margin-top:12px;">This form isn&rsquo;t connected to an inbox yet. Wire it to a form service, or use the email and phone opposite in the meantime.</p>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div>
-      <div class="brand">Scholar's Quest</div>
-      <p>Virtual tutoring in Math and English for Pre-K through Grade 8.</p>
+  <div class="hr" style="margin-top:0;"></div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</span>
+      <p>One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
     </div>
     <div>
-      <div class="footer-heading">Contact</div>
-      <p><a href="mailto:info@scholars.quest">info@scholars.quest</a></p>
-      <p><a href="tel:+16095178112">(609) 517-8112</a></p>
+      <div class="footer-heading">Programs</div>
+      <div class="footer-links">
+        <a href="math.html">Math tutoring</a>
+        <a href="english.html">English tutoring</a>
+        <a href="demo.html">Book a free demo</a>
+      </div>
     </div>
     <div>
-      <div class="footer-heading">Explore</div>
-      <p><a href="scheduling.html">Book a Demo Class</a></p>
-      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Get in touch</div>
+      <div class="footer-links">
+        <a href="mailto:info@scholars.quest">info@scholars.quest</a>
+        <a href="tel:+16095178112">(609) 517-8112</a>
+      </div>
     </div>
   </div>
-  <div class="wrap copyright">&copy; <span id="year"></span> Scholar's Quest. All rights reserved.</div>
+  <div class="wrap footer-copy">&copy; <span id="year"></span> Scholar&rsquo;s Quest. All rights reserved.</div>
 </footer>
 <script src="js/main.js"></script>
 </body>

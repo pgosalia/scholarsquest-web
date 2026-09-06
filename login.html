@@ -5,57 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login | Scholar's Quest</title>
 <meta name="description" content="Student and parent portal login.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand">Scholar's Quest</a>
+  <div class="wrap">
+    <a href="index.html" class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
     <nav id="siteNav">
       <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="math.html">Math</a></li>
       <li><a href="english.html">English</a></li>
-      <li><a href="scheduling.html">Book a Demo</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="btn btn-login">Student / Parent Login</a>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-secondary">Parent login</a>
+      <a href="demo.html" class="btn btn-primary">Book a free demo</a>
+    </div>
   </div>
+  <div class="header-divider"></div>
 </header>
 
 <main>
-  <section class="section narrow login-page">
-    <div class="wrap">
-      <h1>Student &amp; Parent Portal</h1>
-      <p class="portal-status">Coming soon.</p>
-      <p>This is where students will check assignments and progress, and parents will purchase worksheets and pay tuition. The portal is being built separately from these public pages &mdash; once it's live, this button will link straight to it.</p>
-      <p><a href="contact.html" class="btn btn-outline">Contact us in the meantime</a></p>
+
+<section class="section section-top">
+  <div class="hero-grid" style="gap:48px;align-items:start;">
+    <div class="max-600">
+      <span class="tag tag-outline">In development</span>
+      <h1 style="font-size:clamp(34px,4.4vw,48px);margin:20px 0 18px;">Student &amp; parent portal</h1>
+      <p style="font-size:16px;line-height:1.65;color:var(--color-neutral-300);margin:0 0 18px;">We&rsquo;re building a portal where students check assignments and progress, and parents pay tuition and buy worksheets. It&rsquo;s being built separately from this site. When it&rsquo;s live, this page becomes the sign-in.</p>
+      <p style="font-size:15px;color:var(--color-neutral-400);margin:0 0 28px;">Until then, everything you need runs through email or a quick call.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-large">Contact us instead</a>
+        <a href="demo.html" class="btn btn-secondary btn-large">Book a demo</a>
+      </div>
     </div>
-  </section>
+    <div class="portal-panel">
+      <div class="band-tag" style="margin-bottom:20px;">What the portal will do</div>
+      <div class="portal-item"><div class="rule"></div><div><h4>Assignments &amp; submissions</h4><p>Students see what&rsquo;s due and upload work.</p></div></div>
+      <div class="portal-item"><div class="rule"></div><div><h4>Progress reports</h4><p>Session notes and trends in one place for parents.</p></div></div>
+      <div class="portal-item"><div class="rule"></div><div><h4>Tuition &amp; worksheets</h4><p>Pay for sessions and buy practice packs.</p></div></div>
+      <div class="portal-item" style="margin-bottom:0;"><div class="rule"></div><div><h4>Messaging</h4><p>Direct line to your child&rsquo;s tutor between sessions.</p></div></div>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div>
-      <div class="brand">Scholar's Quest</div>
-      <p>Virtual tutoring in Math and English for Pre-K through Grade 8.</p>
+  <div class="hr" style="margin-top:0;"></div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</span>
+      <p>One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
     </div>
     <div>
-      <div class="footer-heading">Contact</div>
-      <p><a href="mailto:info@scholars.quest">info@scholars.quest</a></p>
-      <p><a href="tel:+16095178112">(609) 517-8112</a></p>
+      <div class="footer-heading">Programs</div>
+      <div class="footer-links">
+        <a href="math.html">Math tutoring</a>
+        <a href="english.html">English tutoring</a>
+        <a href="demo.html">Book a free demo</a>
+      </div>
     </div>
     <div>
-      <div class="footer-heading">Explore</div>
-      <p><a href="scheduling.html">Book a Demo Class</a></p>
-      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Get in touch</div>
+      <div class="footer-links">
+        <a href="mailto:info@scholars.quest">info@scholars.quest</a>
+        <a href="tel:+16095178112">(609) 517-8112</a>
+      </div>
     </div>
   </div>
-  <div class="wrap copyright">&copy; <span id="year"></span> Scholar's Quest. All rights reserved.</div>
+  <div class="wrap footer-copy">&copy; <span id="year"></span> Scholar&rsquo;s Quest. All rights reserved.</div>
 </footer>
 <script src="js/main.js"></script>
 </body>
