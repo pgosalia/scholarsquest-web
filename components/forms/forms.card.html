@@ -1,0 +1,34 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Forms — Input, Select, Checkbox, Radio, Switch" subtitle="2px borders, 16px radius, teal focus halo" -->
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>body{margin:0;padding:22px;background:var(--surface-page);font-family:var(--font-body)}.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}.col{display:flex;flex-direction:column;gap:14px}.lbl{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}</style>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Button, IconButton, Card, Badge, Avatar, Logo, Icon, Input, Select, Checkbox, Radio, Switch, ProgressBar, Alert, Modal, Tabs, NavBar, SideNav } = window.ScholarSQuestDesignSystem_b05a4d;
+
+function Demo(){
+const [v,setV]=React.useState('');const [c,setC]=React.useState(true);const [s,setS]=React.useState(true);const [r,setR]=React.useState('math');
+return(<div className="col">
+<div className="row" style={{alignItems:'flex-start',gap:18}}>
+<Input label="Parent email" icon="mail" placeholder="you@example.com" value={v} onChange={e=>setV(e.target.value)} hint="Lesson recaps land here." style={{width:250}} />
+<Select label="Grade level" options={['Grade 6','Grade 7','Grade 8','Grade 9']} style={{width:190}} />
+<Input label="Phone" icon="phone" placeholder="555-0100" error="Enter a valid number" style={{width:190}} />
+</div>
+<div className="row" style={{gap:22}}>
+<Checkbox label="Text me reminders" checked={c} onChange={()=>setC(!c)} />
+<Checkbox label="Share progress with school" checked={false} onChange={()=>{}} />
+<Switch label="Weekly progress email" checked={s} onChange={()=>setS(!s)} />
+</div>
+<div className="row" style={{alignItems:'stretch',gap:12}}>
+<Radio block name="subj" label="Math" description="K–12, Algebra, Geometry, Calculus" checked={r==='math'} onChange={()=>setR('math')} style={{width:215}} />
+<Radio block name="subj" label="English" description="Reading, writing, essays" checked={r==='eng'} onChange={()=>setR('eng')} style={{width:215}} />
+<Radio block name="subj" label="SAT / ACT" description="Full-length practice + drills" checked={r==='test'} onChange={()=>setR('test')} style={{width:215}} />
+</div>
+</div>);}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
