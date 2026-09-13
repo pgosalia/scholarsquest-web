@@ -1,0 +1,7 @@
+/* Scholar's Quest webfonts.
+   SUBSTITUTION NOTE: no font binaries were supplied with the brand assets.
+   Montserrat is the closest Google Fonts match to the "Scholar's QUEST" wordmark;
+   Nunito is the warm, rounded companion used for body/UI; IBM Plex Mono for
+   numerals, scores and math. Replace with licensed binaries + real @font-face
+   rules when available. */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap");

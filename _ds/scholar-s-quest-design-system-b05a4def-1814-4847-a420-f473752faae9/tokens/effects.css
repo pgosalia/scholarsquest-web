@@ -1,0 +1,22 @@
+:root{
+--radius-xs:6px;--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--radius-pill:999px;
+
+/* Warm-tinted shadows — never neutral black */
+--shadow-xs:0 1px 2px rgba(20,18,24,.06);
+--shadow-sm:0 2px 6px rgba(20,18,24,.07);
+--shadow-md:0 8px 20px -6px rgba(20,18,24,.13);
+--shadow-lg:0 18px 40px -12px rgba(20,18,24,.18);
+--shadow-teal:0 10px 24px -8px rgba(43,196,193,.55);
+--shadow-pink:0 10px 24px -8px rgba(246,56,104,.45);
+/* Playful "sticker" offset used on primary CTAs and stat tiles */
+--shadow-pop:4px 4px 0 var(--sq-ink);
+--shadow-pop-soft:4px 4px 0 rgba(20,18,24,.12);
+
+--border-w:2px;--border-w-hairline:1px;
+
+--ease-out:cubic-bezier(.22,.8,.32,1); /* @kind other */
+--ease-bounce:cubic-bezier(.34,1.56,.64,1); /* @kind other */
+--dur-fast:120ms; /* @kind other */--dur-base:200ms; /* @kind other */--dur-slow:360ms; /* @kind other */
+
+--blur-glass:blur(12px); /* @kind other */
+}

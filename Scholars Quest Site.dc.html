@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/colors.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/typography.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/effects.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/tokens/base.css">
+<link rel="stylesheet" href="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/styles.css">
+<script src="_ds/scholar-s-quest-design-system-b05a4def-1814-4847-a420-f473752faae9/_ds_bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--sq-cream); }
+  a { color: var(--text-link); text-decoration: none; }
+  a:hover { color: var(--text-link-hover); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .sq-chev { transform: rotate(180deg); }
+</style>
+</helmet>
+
+<div style="background:var(--sq-cream);font-family:var(--font-body);color:var(--text-body);min-height:100vh">
+
+<x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.NavBar" links="{{ navLinks }}" active="{{ page }}" on-navigate="{{ nav }}" cta="Book a free demo" on-cta="{{ goDemo }}" secondary-cta="Parent login" on-secondary-cta="{{ goLogin }}" hint-size="100%,70px"></x-import>
+
+<!-- ══════════ HOME ══════════ -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main data-screen-label="Home">
+
+<section style="max-width:1180px;margin:0 auto;padding:72px 24px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+    <div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(34px,4.6vw,58px);font-weight:900;letter-spacing:-.03em;line-height:1.04;color:var(--sq-ink);margin:0;text-wrap:pretty">One-on-one tutoring that starts where your child <span style="color:var(--sq-pink-500)">actually is</span>.</h1>
+      <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);max-width:500px;margin:18px 0 24px">One-on-one tutoring in Math and English, matched to your child's pace, from early reading and number sense through calculus, AP and SAT prep.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="outline" on-click="{{ goMath }}" hint-size="200px,56px">See the programs</x-import>
+      </div>
+      <p style="font-size:14px;font-weight:600;color:var(--text-muted);margin:20px 0 0">No card required. The demo is a real session, not a sales call.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="height:360px;border-radius:24px;background:var(--sq-teal-100);border:2px dashed rgba(20,18,24,.14);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--sq-grey-600);font-size:13px;font-weight:700">Hero photo: a student working at a laptop</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div style="flex:1 1 200px;background:var(--sq-white);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:16px">
+          <div style="font-size:13px;font-weight:900;color:var(--sq-ink)">Session notes · Grade 5</div>
+          <div style="font-size:11.5px;font-weight:700;color:var(--text-muted);margin-top:2px">Fractions → word problems</div>
+          <div style="height:10px;border-radius:999px;background:var(--sq-grey-200);margin-top:12px;overflow:hidden"><div style="width:72%;height:100%;background:var(--sq-teal-400)"></div></div>
+        </div>
+        <div style="flex:0 1 auto;background:var(--sq-ink);border-radius:24px;padding:14px 18px;display:flex;align-items:center;gap:10px;color:var(--sq-white)">
+          <span style="color:var(--sq-sun-400);display:flex"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="users" size="20" hint-size="20px,20px"></x-import></span>
+          <span style="font-family:var(--font-mono);font-weight:600;font-size:15px">200+ students</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showTrustStrip }}" hint-placeholder-val="{{ true }}">
+<section style="background:var(--sq-white);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">
+  <div style="max-width:1180px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="text-align:center;flex:1 1 120px"><div style="font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--sq-teal-700)">200+</div><div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">students to date</div></div>
+    <div style="text-align:center;flex:1 1 120px"><div style="font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--sq-teal-700)">80%</div><div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">up two letter grades in a semester</div></div>
+    <div style="text-align:center;flex:1 1 120px"><div style="font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--sq-teal-700)">1:1</div><div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">one student, one tutor</div></div>
+    <div style="text-align:center;flex:1 1 120px"><div style="font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--sq-teal-700)">K–12</div><div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">every grade band</div></div>
+    <div style="text-align:center;flex:1 1 120px"><div style="font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--sq-teal-700)">60</div><div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">minutes per session</div></div>
+  </div>
+</section>
+</sc-if>
+
+<section style="max-width:1180px;margin:0 auto;padding:88px 24px">
+  <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">What we teach</div>
+  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.6vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.08;color:var(--sq-ink);margin:0">Two subjects, every grade band</h2>
+    <span style="font-size:14px;font-weight:600;color:var(--text-muted)">Pick a subject to see what a term looks like.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:34px">
+    <div onClick="{{ goMath }}" style="cursor:pointer;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:30px;position:relative;overflow:hidden;transition:box-shadow 200ms var(--ease-out),transform 200ms var(--ease-out)" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-4px)">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-teal-400)"></div>
+      <div style="width:52px;height:52px;border-radius:16px;background:var(--sq-teal-100);color:var(--sq-teal-700);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="calculator" size="26" hint-size="26px,26px"></x-import></div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Mathematics</div>
+      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">From counting to calculus</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 20px">Arithmetic fluency, fractions and ratios, algebra, geometry, trigonometry and calculus, plus SAT, ACT and AP Math.</p>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-teal-700)">K–5</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Number sense, operations, word problems</span></div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-teal-700)">6–8</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Pre-algebra, ratios, data, state testing</span></div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-teal-700)">9–12</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Algebra II, geometry, calculus, AP &amp; SAT</span></div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:var(--sq-pink-600)">Explore math tutoring <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="arrow-right" size="17" hint-size="17px,17px"></x-import></div>
+    </div>
+    <div onClick="{{ goEnglish }}" style="cursor:pointer;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:30px;position:relative;overflow:hidden;transition:box-shadow 200ms var(--ease-out),transform 200ms var(--ease-out)" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-4px)">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-pink-400)"></div>
+      <div style="width:52px;height:52px;border-radius:16px;background:var(--sq-pink-100);color:var(--sq-pink-700);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="book-open" size="26" hint-size="26px,26px"></x-import></div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">English</div>
+      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">From first readers to first drafts</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 20px">Phonics and fluency, comprehension, grammar, essay writing, literature analysis, plus SAT, ACT and AP English.</p>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-700)">K–5</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Phonics, fluency, vocabulary, sentences</span></div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-700)">6–8</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Comprehension, grammar, structured essays</span></div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:10px"><span style="width:62px;flex:none;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-700)">9–12</span><span style="font-size:14px;font-weight:600;color:var(--text-body)">Literary analysis, argument, AP &amp; SAT</span></div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:var(--sq-pink-600)">Explore english tutoring <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="arrow-right" size="17" hint-size="17px,17px"></x-import></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sq-cream-deep)">
+  <div style="max-width:1180px;margin:0 auto;padding:88px 24px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-teal-700);margin-bottom:12px">How it works</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.6vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.08;color:var(--sq-ink);margin:0">Three steps from first click to first session.</h2>
+    <p style="font-size:16px;font-weight:600;color:var(--text-body);margin:10px 0 0">Usually inside a week.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:34px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-500)">01</span><span style="flex:1;height:2px;background:rgba(20,18,24,.10)"></span></div>
+        <div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="phone-call" size="28" hint-size="28px,28px"></x-import></div>
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Tell us about your child</h4>
+        <p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Grade, subject, and what's been hard lately. A few sentences is plenty.</p>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-500)">02</span><span style="flex:1;height:2px;background:rgba(20,18,24,.10)"></span></div>
+        <div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="calendar" size="28" hint-size="28px,28px"></x-import></div>
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Pick a time that fits</h4>
+        <p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Weekday evenings and weekends included. Reschedule any time without penalty.</p>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-500)">03</span><span style="flex:1;height:2px;background:rgba(20,18,24,.10)"></span></div>
+        <div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="video" size="28" hint-size="28px,28px"></x-import></div>
+        <h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Meet your tutor, free</h4>
+        <p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">A real working session. Afterwards you get notes on what we saw and a plan, and you decide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sq-teal-400)">
+  <div style="max-width:1180px;margin:0 auto;padding:88px 24px">
+    <div>
+      <div style="color:rgba(20,18,24,.35)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="quote" size="40" hint-size="40px,40px"></x-import></div>
+      <blockquote style="font-family:var(--font-display);font-size:clamp(21px,2.4vw,28px);font-weight:800;line-height:1.32;letter-spacing:-.01em;color:var(--sq-ink);margin:10px 0 22px">{{ quoteText }}</blockquote>
+      <div style="font-weight:900;color:var(--sq-ink)">{{ quoteName }}</div>
+      <div style="font-size:13px;font-weight:700;color:rgba(20,18,24,.7)">{{ quoteRole }}</div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(20,18,24,.18)">
+        <div style="display:flex;gap:8px;margin-right:auto">
+          <button onClick="{{ setQ0 }}" aria-label="Quote 1" style="width:10px;height:10px;padding:0;border:0;border-radius:50%;cursor:pointer;background:{{ dot0 }}"></button>
+          <button onClick="{{ setQ1 }}" aria-label="Quote 2" style="width:10px;height:10px;padding:0;border:0;border-radius:50%;cursor:pointer;background:{{ dot1 }}"></button>
+          <button onClick="{{ setQ2 }}" aria-label="Quote 3" style="width:10px;height:10px;padding:0;border:0;border-radius:50%;cursor:pointer;background:{{ dot2 }}"></button>
+        </div>
+        <button onClick="{{ prevQuote }}" aria-label="Previous quote" style="background:none;border:0;cursor:pointer;color:var(--sq-ink);display:flex;padding:8px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="arrow-left" size="20" hint-size="20px,20px"></x-import></button>
+        <button onClick="{{ nextQuote }}" aria-label="Next quote" style="background:none;border:0;cursor:pointer;color:var(--sq-ink);display:flex;padding:8px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="arrow-right" size="20" hint-size="20px,20px"></x-import></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:88px 24px">
+  <div style="background:var(--sq-ink);color:var(--sq-white);border-radius:24px;padding:48px;text-align:center">
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.4vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.08;color:#fff;margin:0">Start with a free demo class</h2>
+    <p style="font-size:17px;font-weight:600;color:var(--sq-grey-300);max-width:560px;margin:14px auto 26px">Pick a time, tell us a little about your child, and meet a tutor. If it isn't the right fit, that's a useful answer too.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="secondary" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+      <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="ghost" on-click="{{ goContact }}" style="color:var(--sq-teal-300)" hint-size="200px,56px">Ask a question first</x-import>
+    </div>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ MATH ══════════ -->
+<sc-if value="{{ isMath }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Math">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 32px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:end">
+    <div style="max-width:560px">
+      <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">Program · Mathematics</div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(32px,4.4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:0 0 18px">Math, from counting to calculus</h1>
+      <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 26px">We start with a short diagnostic, find the gap that's actually causing trouble, and work forward from there. One student, one tutor, every session.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="outline" on-click="{{ goEnglish }}" hint-size="180px,56px">English instead</x-import>
+      </div>
+    </div>
+    <div style="height:280px;border-radius:24px;background:var(--sq-teal-100);border:2px dashed rgba(20,18,24,.14);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--sq-grey-600);font-size:13px;font-weight:700">Math session photo: whiteboard or notebook work</div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:32px 24px 88px">
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 32px">What we cover, by grade band</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-teal-400)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-teal-700);margin-bottom:10px">Grades K–5</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">Elementary math</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">A solid foundation in the four operations, and the habit of explaining why an answer works. Games and short interactive drills keep it moving.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Number sense</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Times tables</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Fractions</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Word problems</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Measurement</span>
+      </div>
+      <sc-if value="{{ panelMK5 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-sun-400)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-sun-700);margin-bottom:10px">Grades 6–8</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">Middle school math</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">The years where math turns abstract. We shore up fractions, decimals and ratios, then move into pre-algebra, geometry and data with plenty of practice against state test formats.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-sun-50);color:var(--sq-sun-700)">Ratios &amp; percent</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-sun-50);color:var(--sq-sun-700)">Pre-algebra</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-sun-50);color:var(--sq-sun-700)">Geometry</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-sun-50);color:var(--sq-sun-700)">Data &amp; graphs</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-sun-50);color:var(--sq-sun-700)">State testing</span>
+      </div>
+      <sc-if value="{{ panelM68 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-pink-400)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-700);margin-bottom:10px">Grades 9–12</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">High school math</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">Algebra II through calculus, with support for homework, projects and exams. Sessions run as steady weekly coaching or as focused sprints before a test.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Algebra II</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Trigonometry</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Pre-calculus</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Calculus</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Statistics</span>
+      </div>
+      <sc-if value="{{ panelM912 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sq-ink);color:var(--sq-white)">
+  <div style="max-width:1180px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:44px;align-items:center">
+    <div style="max-width:460px">
+      <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:12px">Test preparation</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:#fff;margin:0 0 16px">SAT, ACT and AP math</h2>
+      <p style="font-size:16px;line-height:1.65;font-weight:600;color:var(--sq-grey-300);margin:0">Timed sections, error logs and question-type drills, plus the pacing strategy that usually matters more than the content. We build a schedule backwards from your test date.</p>
+    </div>
+    <div style="display:grid;gap:16px">
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">SAT</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">Heart of Algebra, problem solving, advanced math</span></div>
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">ACT</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">Speed work across all 60 questions</span></div>
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">AP</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">Calculus AB/BC and Statistics, free-response practice</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:88px 24px">
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 32px">Why families stay</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
+    <div><div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="user-check" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">One tutor, consistently</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Your child works with the same tutor week to week, so nobody re-explains the backstory every session.</p></div>
+    <div><div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="notebook-pen" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Notes after every session</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">What we worked on, what clicked, what to practise. No guessing about progress.</p></div>
+    <div><div style="color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="calendar-clock" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Scheduling that bends</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Early mornings, evenings, weekends. Reschedule when life happens, with no penalties.</p></div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 88px">
+  <div style="background:var(--sq-ink);color:var(--sq-white);border-radius:24px;padding:44px">
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em;color:#fff;margin:0">See a math session before you commit</h2>
+    <p style="font-size:17px;font-weight:600;color:var(--sq-grey-300);max-width:560px;margin:14px 0 26px">The demo is a real working session with a real tutor, free, and you get our notes afterwards.</p>
+    <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="secondary" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ ENGLISH ══════════ -->
+<sc-if value="{{ isEnglish }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="English">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 32px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:end">
+    <div style="max-width:560px">
+      <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">Program · English</div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(32px,4.4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:0 0 18px">English, from first readers to first drafts</h1>
+      <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 26px">Reading that makes sense, writing that holds together, and the confidence to speak up. We work from your child's own assignments wherever we can.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="outline" on-click="{{ goMath }}" hint-size="160px,56px">Math instead</x-import>
+      </div>
+    </div>
+    <div style="height:280px;border-radius:24px;background:var(--sq-pink-100);border:2px dashed rgba(20,18,24,.14);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--sq-grey-600);font-size:13px;font-weight:700">English session photo: reading or writing</div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:32px 24px 88px">
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 32px">What we cover, by grade band</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-pink-400)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-pink-700);margin-bottom:10px">Grades K–5</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">Learning to read</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">Phonics, decoding and fluency, then comprehension and vocabulary. Short, lively sessions built around books a child actually wants to finish.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Phonics</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Fluency</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Vocabulary</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Sentences</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-pink-50);color:var(--sq-pink-700)">Spelling</span>
+      </div>
+      <sc-if value="{{ panelEK5 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-grape-500)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-grape-700);margin-bottom:10px">Grades 6–8</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">Reading to learn</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">Strategies for harder texts, grammar and punctuation that stick, and the structure of a paragraph, then a whole essay, with feedback on every draft.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-grape-100);color:var(--sq-grape-700)">Comprehension</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-grape-100);color:var(--sq-grape-700)">Grammar</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-grape-100);color:var(--sq-grape-700)">Essay structure</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-grape-100);color:var(--sq-grape-700)">Creative writing</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-grape-100);color:var(--sq-grape-700)">Speaking</span>
+      </div>
+      <sc-if value="{{ panelE68 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0 0 auto 0;height:6px;background:var(--sq-teal-400)"></div>
+      <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--sq-teal-700);margin-bottom:10px">Grades 9–12</div>
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:900;margin:0 0 10px;color:var(--sq-ink)">Analysis and argument</h3>
+      <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0 0 18px">Close reading of classic and contemporary texts, thesis-driven writing, and the timed essay. Support for coursework, exams and college application drafts.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px">Tap a topic to see what it means.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Literary analysis</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Thesis writing</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Rhetoric</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Timed essays</span>
+        <span onClick="{{ pickTopic }}" style="cursor:pointer;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px;background:var(--sq-teal-50);color:var(--sq-teal-700)">Presentations</span>
+      </div>
+      <sc-if value="{{ panelE912 }}" hint-placeholder-val="{{ false }}"><div style="margin-top:14px;background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--sq-ink);margin-bottom:4px">{{ topicTitle }}</div><p style="font-size:14px;font-weight:600;line-height:1.55;color:var(--text-body);margin:0">{{ topicBody }}</p></div></sc-if>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sq-ink);color:var(--sq-white)">
+  <div style="max-width:1180px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:44px;align-items:center">
+    <div style="max-width:460px">
+      <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:12px">Test preparation</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:#fff;margin:0 0 16px">SAT, ACT and AP English</h2>
+      <p style="font-size:16px;line-height:1.65;font-weight:600;color:var(--sq-grey-300);margin:0">Question-type drills, evidence-based reading practice, and a repeatable plan for the essay. We schedule backwards from your test date and track section timing week by week.</p>
+    </div>
+    <div style="display:grid;gap:16px">
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">SAT</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">Reading &amp; Writing modules, evidence questions</span></div>
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">ACT</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">English, Reading, and the optional essay</span></div>
+      <div style="display:flex;gap:16px;align-items:baseline"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-sun-400);width:52px;flex:none">AP</span><span style="font-size:15px;font-weight:600;color:var(--sq-grey-300)">Language &amp; Composition, Literature &amp; Composition</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:88px 24px">
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 32px">Why families stay</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
+    <div><div style="color:var(--sq-pink-600);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="pencil" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Feedback on real work</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">We mark up your child's own essays and assignments, not generic worksheets.</p></div>
+    <div><div style="color:var(--sq-pink-600);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="book-open" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Reading they'll finish</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Texts chosen for level and interest: the fastest route to a child who reads without being asked.</p></div>
+    <div><div style="color:var(--sq-pink-600);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="message-circle" size="28" hint-size="28px,28px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Space to speak up</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">One-on-one sessions are a low-stakes place to practise reading aloud and presenting.</p></div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 88px">
+  <div style="background:var(--sq-ink);color:var(--sq-white);border-radius:24px;padding:44px">
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em;color:#fff;margin:0">Bring an assignment to the demo</h2>
+    <p style="font-size:17px;font-weight:600;color:var(--sq-grey-300);max-width:560px;margin:14px 0 26px">Send us a piece of writing or a reading your child is stuck on, and we'll build the free session around it.</p>
+    <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="secondary" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ ABOUT ══════════ -->
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="About">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 24px">
+  <div style="max-width:720px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">About us</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(32px,4.4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:0 0 18px">A small practice, on purpose</h1>
+    <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0">Scholar's Quest is one-on-one tutoring in Math and English for Kindergarten through Grade 12, built around the belief that confidence comes before grades, not the other way round.</p>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:40px 24px 72px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:start">
+    <div style="height:420px;border-radius:24px;background:var(--sq-teal-100);border:2px dashed rgba(20,18,24,.14);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--sq-grey-600);font-size:13px;font-weight:700">Founder portrait: Kathni Patel</div>
+    <div>
+      <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-teal-700);margin-bottom:12px">The founder</div>
+      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 18px">Kathni Patel</h2>
+      <p style="font-size:16px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 14px">I've spent more than four years working with children in Math and English, and the thing I keep coming back to is that no two students get stuck in the same place. So I teach to the student in front of me: their pace, their learning style, the specific thing that isn't landing, rather than to a fixed curriculum.</p>
+      <p style="font-size:16px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 14px">Homework, exam preparation, or a concept that has refused to click for a year: we work on whatever is actually in the way. Grades improve, but the change parents mention first is usually confidence.</p>
+      <p style="font-size:16px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 24px">Scholar's Quest has stayed deliberately small. I match every family myself, build the learning plan with you and your child, and read the session notes.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+        <div style="background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:18px">
+          <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Qualification</div>
+          <div style="font-size:15px;font-weight:800;color:var(--sq-ink)">Early Childhood Degree, Sheridan College</div>
+        </div>
+        <div style="background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:16px;padding:18px">
+          <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">Experience</div>
+          <div style="font-size:15px;font-weight:800;color:var(--sq-ink)">4+ years teaching Math &amp; English</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sq-teal-400)">
+  <div style="max-width:1180px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+    <div><div style="font-family:var(--font-mono);font-size:40px;font-weight:600;color:var(--sq-ink)">200+</div><div style="font-size:14px;font-weight:700;color:rgba(20,18,24,.78);margin-top:6px">students enrolled with us to date</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:40px;font-weight:600;color:var(--sq-ink)">80%</div><div style="font-size:14px;font-weight:700;color:rgba(20,18,24,.78);margin-top:6px">improve by two letter grades within their first semester</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:40px;font-weight:600;color:var(--sq-ink)">K–12</div><div style="font-size:14px;font-weight:700;color:rgba(20,18,24,.78);margin-top:6px">grades served, in Math and English, including test prep</div></div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:88px 24px">
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 32px">How we work</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:26px"><div style="color:var(--sq-teal-700);margin-bottom:12px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="search" size="26" hint-size="26px,26px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Find the gap first</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Every student starts with a short diagnostic. We'd rather spend a session finding the real problem than a term treating the symptom.</p></div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:26px"><div style="color:var(--sq-teal-700);margin-bottom:12px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="users" size="26" hint-size="26px,26px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">One student, one tutor</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">No group classes and no rotating staff. The same tutor week after week, so progress compounds.</p></div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:26px"><div style="color:var(--sq-teal-700);margin-bottom:12px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="mail" size="26" hint-size="26px,26px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Parents stay informed</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Notes after every session: what we covered, what clicked, what to practise. No mystery about where the money goes.</p></div>
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);padding:26px"><div style="color:var(--sq-teal-700);margin-bottom:12px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="trending-up" size="26" hint-size="26px,26px"></x-import></div><h4 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Confidence is the metric</h4><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">A child who will attempt a hard problem in front of someone has already made the hardest gain. Grades tend to follow.</p></div>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 88px">
+  <div style="background:var(--sq-ink);color:var(--sq-white);border-radius:24px;padding:44px">
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em;color:#fff;margin:0">Meet us before you commit</h2>
+    <p style="font-size:17px;font-weight:600;color:var(--sq-grey-300);max-width:560px;margin:14px 0 26px">One free session, a real tutor, and honest notes on what your child needs.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="secondary" pop="true" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="280px,56px">Book a free demo class</x-import>
+      <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="ghost" on-click="{{ goContact }}" style="color:var(--sq-teal-300)" hint-size="160px,56px">Get in touch</x-import>
+    </div>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ DEMO ══════════ -->
+<sc-if value="{{ isDemo }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Demo">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 32px">
+  <div style="max-width:680px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">Free demo class</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(32px,4.4vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:0 0 18px">A real session, before you decide anything</h1>
+    <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0">Sixty minutes with a tutor, matched to your child's grade and subject. No card, no obligation, and you keep the notes either way.</p>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 72px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start">
+    <div>
+      <h2 style="font-family:var(--font-display);font-size:26px;font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0 0 26px">What happens</h2>
+      <div style="display:flex;gap:18px;margin-bottom:26px"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-pink-500);width:26px;flex:none;padding-top:3px">01</span><div><h3 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">You send the details</h3><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Grade, subject, and what's been hard lately. The form opposite takes a minute.</p></div></div>
+      <div style="display:flex;gap:18px;margin-bottom:26px"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-pink-500);width:26px;flex:none;padding-top:3px">02</span><div><h3 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">We match a tutor and confirm a time</h3><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">Usually within one business day, from the times you marked as workable.</p></div></div>
+      <div style="display:flex;gap:18px;margin-bottom:26px"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-pink-500);width:26px;flex:none;padding-top:3px">03</span><div><h3 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">Your child works, we watch how</h3><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">A short diagnostic, then real problems. Join a video link from any laptop or tablet, with nothing to install.</p></div></div>
+      <div style="display:flex;gap:18px"><span style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--sq-pink-500);width:26px;flex:none;padding-top:3px">04</span><div><h3 style="font-family:var(--font-display);font-size:19px;font-weight:900;margin:0 0 6px;color:var(--sq-ink)">You get notes and a plan</h3><p style="font-size:14.5px;font-weight:600;line-height:1.6;color:var(--text-body);margin:0">What we saw, where the gap is, and what we'd do about it. Then it's your call.</p></div></div>
+    </div>
+
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-md);padding:32px">
+      <sc-if value="{{ demoSent }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Alert" tone="success" title="Request received" hint-size="100%,90px">We'll be in touch within one business day with a tutor and a time. If it's urgent, call (609) 517-8112.</x-import>
+          <div style="margin-top:18px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" variant="outline" size="sm" on-click="{{ resetDemo }}" hint-size="200px,38px">Send another request</x-import></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ demoOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0">Request a demo</h2>
+          <p style="font-size:13.5px;font-weight:600;color:var(--text-muted);margin:6px 0 0">All fields optional except email, so tell us what you can.</p>
+        </div>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Input" label="Parent name" placeholder="Your name" icon="user" full-width="true" hint-size="100%,76px"></x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Input" label="Email" type="email" placeholder="you@example.com" icon="mail" full-width="true" hint-size="100%,76px"></x-import>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px">
+          <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Select" label="Child's grade" options="{{ gradeOptions }}" full-width="true" hint-size="100%,76px"></x-import>
+          <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Select" label="Subject" options="{{ subjectOptions }}" full-width="true" hint-size="100%,76px"></x-import>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:800;color:var(--sq-ink);margin-bottom:8px">Times that usually work</div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px">
+            <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Checkbox" label="Weekday mornings" checked="{{ t0 }}" on-change="{{ toggleT0 }}" hint-size="180px,24px"></x-import>
+            <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Checkbox" label="Weekday evenings" checked="{{ t1 }}" on-change="{{ toggleT1 }}" hint-size="180px,24px"></x-import>
+            <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Checkbox" label="Weekends" checked="{{ t2 }}" on-change="{{ toggleT2 }}" hint-size="120px,24px"></x-import>
+          </div>
+        </div>
+        <label style="display:block">
+          <span style="display:block;font-size:14px;font-weight:800;color:var(--sq-ink);margin-bottom:6px">What's been hard lately?</span>
+          <textarea rows="4" placeholder="e.g. fractions, or essays that lose the thread halfway" style="width:100%;box-sizing:border-box;font-family:var(--font-body);font-size:15px;font-weight:600;color:var(--sq-ink);padding:12px 16px;border-radius:16px;border:2px solid var(--border-default);outline:none;resize:vertical"></textarea>
+        </label>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" full-width="true" pop="true" on-click="{{ sendDemo }}" hint-size="100%,48px">Request my free demo</x-import>
+        <p style="font-size:12.5px;font-weight:600;color:var(--text-muted);margin:0">This form isn't connected to a booking system yet. Wire it to your scheduler or a form service to go live.</p>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 88px">
+  <div style="height:1px;background:var(--border-subtle);margin:0 0 48px"></div>
+  <h2 style="font-family:var(--font-display);font-size:clamp(26px,3.2vw,34px);font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0">Questions parents ask</h2>
+  <p style="font-size:15.5px;font-weight:600;color:var(--text-muted);margin:8px 0 30px">Draft answers. Correct anything that doesn't match how you actually run sessions.</p>
+  <div style="max-width:760px;display:flex;flex-direction:column;gap:12px">
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">How long is a session, and how often?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">Sessions run 60 minutes. Most families book once or twice a week; test-prep students often go twice weekly in the two months before the exam.</div>
+    </details>
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">What if we need to reschedule?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">Reschedule or cancel with reasonable notice and there's no charge and no penalty. Illness and school events happen; we'd rather move the session than waste it.</div>
+    </details>
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">How is a tutor matched to my child?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">We match on subject and grade level first, then on temperament. A child who freezes up needs a different pace than one who races ahead. If the fit isn't right after a session or two, tell us and we'll change it.</div>
+    </details>
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">What actually happens in the demo class?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">A short diagnostic to see where your child is, then real work on something they're currently stuck on. It's a teaching session, not a sales call, and you get written notes afterwards.</div>
+    </details>
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">How will I know it's working?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">You get notes after every session covering what we worked on and what to practise, plus a progress summary you can compare against school reports.</div>
+    </details>
+    <details style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--sq-ink)">Should I sit in on sessions?<span class="sq-chev" style="color:var(--sq-pink-500);display:flex;transition:transform 200ms var(--ease-out)"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="chevron-down" size="20" hint-size="20px,20px"></x-import></span></summary>
+      <div style="padding:0 22px 20px;font-size:15px;font-weight:600;line-height:1.65;color:var(--text-body)">You're welcome to, and for younger children it often helps for the first session. After that most students concentrate better on their own, and the notes keep you in the loop.</div>
+    </details>
+  </div>
+  <p style="font-size:15px;font-weight:600;color:var(--text-body);margin:28px 0 0">Something not answered here? <a href="#" onClick="{{ goContact }}">Send us the question</a>. We reply to every one.</p>
+</section>
+</sc-if>
+</main>
+</sc-if>
+
+<!-- ══════════ CONTACT ══════════ -->
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Contact">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 32px">
+  <div style="max-width:640px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">Contact</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(32px,4.4vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:0 0 18px">Ask us anything</h1>
+    <p style="font-size:18px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0">Questions about grade levels, scheduling, test prep or how we'd handle a particular problem. A real person reads every message.</p>
+  </div>
+</section>
+
+<section style="max-width:1180px;margin:0 auto;padding:0 24px 88px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="background:var(--sq-teal-50);border:1px solid var(--sq-teal-200);border-radius:24px;padding:26px">
+        <div style="display:flex;align-items:center;gap:10px;color:var(--sq-teal-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="mail" size="20" hint-size="20px,20px"></x-import><span style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase">Email</span></div>
+        <a href="mailto:info@scholars.quest" style="font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--sq-ink)">info@scholars.quest</a>
+        <p style="font-size:14px;font-weight:600;color:var(--text-body);margin:8px 0 0">Replies within one business day.</p>
+      </div>
+      <div style="background:var(--sq-pink-50);border:1px solid var(--sq-pink-200);border-radius:24px;padding:26px">
+        <div style="display:flex;align-items:center;gap:10px;color:var(--sq-pink-700);margin-bottom:10px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="phone" size="20" hint-size="20px,20px"></x-import><span style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase">Phone</span></div>
+        <a href="tel:+16095178112" style="font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--sq-ink)">(609) 517-8112</a>
+        <p style="font-size:14px;font-weight:600;color:var(--text-body);margin:8px 0 0">Call or text. Fastest for scheduling questions.</p>
+      </div>
+      <div style="background:var(--sq-cream-deep);border:1px solid #F3DEC8;border-radius:24px;padding:26px">
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:900;color:var(--sq-ink);margin:0 0 8px">Ready to start?</h3>
+        <p style="font-size:14px;font-weight:600;color:var(--text-body);margin:0 0 16px">Skip the back-and-forth and book the free demo directly.</p>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" icon-right="arrow-right" on-click="{{ goDemo }}" hint-size="240px,46px">Book a free demo class</x-import>
+      </div>
+    </div>
+
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:24px;box-shadow:var(--shadow-md);padding:32px">
+      <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Alert" tone="success" title="Message sent" hint-size="100%,80px">Thanks, we'll reply within one business day.</x-import>
+          <div style="margin-top:18px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" variant="outline" size="sm" on-click="{{ resetContact }}" hint-size="160px,38px">Write another</x-import></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h2 style="font-family:var(--font-display);font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--sq-ink);margin:0">Send a message</h2>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Input" label="Name" placeholder="Your name" icon="user" full-width="true" hint-size="100%,76px"></x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Input" label="Email" type="email" placeholder="you@example.com" icon="mail" full-width="true" hint-size="100%,76px"></x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Select" label="What's this about?" options="{{ topicOptions }}" full-width="true" hint-size="100%,76px"></x-import>
+        <label style="display:block">
+          <span style="display:block;font-size:14px;font-weight:800;color:var(--sq-ink);margin-bottom:6px">Message</span>
+          <textarea rows="5" placeholder="Tell us a bit about your child's grade and what they're finding hard" style="width:100%;box-sizing:border-box;font-family:var(--font-body);font-size:15px;font-weight:600;color:var(--sq-ink);padding:12px 16px;border-radius:16px;border:2px solid var(--border-default);outline:none;resize:vertical"></textarea>
+        </label>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" full-width="true" pop="true" on-click="{{ sendContact }}" hint-size="100%,48px">Send message</x-import>
+        <p style="font-size:12.5px;font-weight:600;color:var(--text-muted);margin:0">This form isn't connected to an inbox yet. Wire it to a form service, or use the email and phone opposite in the meantime.</p>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ LOGIN ══════════ -->
+<sc-if value="{{ isLogin }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Parent login">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 88px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start">
+    <div style="max-width:560px">
+      <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Badge" tone="sun" icon="hammer" hint-size="160px,28px">In development</x-import>
+      <h1 style="font-family:var(--font-display);font-size:clamp(30px,4.2vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.06;color:var(--sq-ink);margin:20px 0 18px">Student &amp; parent portal</h1>
+      <p style="font-size:17px;line-height:1.65;font-weight:600;color:var(--text-body);margin:0 0 16px">We're building a portal where students check assignments and progress, and parents pay tuition and buy worksheets. When it's live, this page becomes the sign-in.</p>
+      <p style="font-size:15px;font-weight:600;color:var(--text-muted);margin:0 0 26px">Until then, everything you need runs through email or a quick call.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" pop="true" on-click="{{ goContact }}" hint-size="220px,56px">Contact us instead</x-import>
+        <x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Button" size="lg" variant="outline" on-click="{{ goDemo }}" hint-size="160px,56px">Book a demo</x-import>
+      </div>
+    </div>
+    <div style="background:var(--sq-ink);color:var(--sq-white);border-radius:24px;padding:32px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:20px">What the portal will do</div>
+      <div style="display:flex;gap:14px;margin-bottom:20px"><span style="color:var(--sq-sun-400);display:flex;padding-top:2px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="pencil" size="20" hint-size="20px,20px"></x-import></span><div><h4 style="font-family:var(--font-display);font-size:17px;font-weight:900;margin:0 0 4px;color:#fff">Assignments &amp; submissions</h4><p style="font-size:14px;font-weight:600;color:var(--sq-grey-300);margin:0">Students see what's due and upload work.</p></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:20px"><span style="color:var(--sq-sun-400);display:flex;padding-top:2px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="trending-up" size="20" hint-size="20px,20px"></x-import></span><div><h4 style="font-family:var(--font-display);font-size:17px;font-weight:900;margin:0 0 4px;color:#fff">Progress reports</h4><p style="font-size:14px;font-weight:600;color:var(--sq-grey-300);margin:0">Session notes and trends in one place for parents.</p></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:20px"><span style="color:var(--sq-sun-400);display:flex;padding-top:2px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="credit-card" size="20" hint-size="20px,20px"></x-import></span><div><h4 style="font-family:var(--font-display);font-size:17px;font-weight:900;margin:0 0 4px;color:#fff">Tuition &amp; worksheets</h4><p style="font-size:14px;font-weight:600;color:var(--sq-grey-300);margin:0">Pay for sessions and buy practice packs.</p></div></div>
+      <div style="display:flex;gap:14px"><span style="color:var(--sq-sun-400);display:flex;padding-top:2px"><x-import component-from-global-scope="ScholarSQuestDesignSystem_b05a4d.Icon" name="message-circle" size="20" hint-size="20px,20px"></x-import></span><div><h4 style="font-family:var(--font-display);font-size:17px;font-weight:900;margin:0 0 4px;color:#fff">Messaging</h4><p style="font-size:14px;font-weight:600;color:var(--sq-grey-300);margin:0">Direct line to your child's tutor between sessions.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ PRIVACY ══════════ -->
+<sc-if value="{{ isPrivacy }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Privacy policy">
+<section style="max-width:1180px;margin:0 auto;padding:64px 24px 24px">
+  <div style="max-width:760px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--sq-pink-600);margin-bottom:12px">Legal</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:900;letter-spacing:-.03em;color:var(--sq-ink);margin:0 0 12px">Privacy policy</h1>
+    <p style="font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--text-muted);margin:0">Effective date: December 15, 2025</p>
+  </div>
+</section>
+<section style="max-width:1180px;margin:0 auto;padding:24px 24px 88px">
+  <div style="max-width:760px;font-size:16px;font-weight:600;line-height:1.7;color:var(--text-body)">
+    <p>Scholar's Quest ("Scholar's Quest," "we," "us," or "our") operates the Scholar's Quest mobile application (the "App"). This policy explains how we collect, use, disclose, and protect information when you use the App.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">1. Who this policy applies to</h2>
+    <p>The App may be used by parents/guardians and students (including children), and by tutors and administrators. If you are a parent or guardian and believe your child is using the App without your permission, contact us (Section 12).</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">2. Information we collect</h2>
+    <p><strong>Information you provide:</strong> account information (name and email address); profile information (optional bio, avatar, profile photo); tutoring and learning information (session details, assignment details, homework submissions and related notes); messages (chat messages and related metadata); support communications.</p>
+    <p><strong>Files you upload:</strong> homework submissions and assignment attachments are stored using Cloudinary. We store file links and metadata (URL, filename, size, upload time) in our database so they can be displayed in the App.</p>
+    <p><strong>Information collected automatically:</strong> device and app information (device type, OS version, app version), plus diagnostics and crash data used to improve reliability and security.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">3. How we use information</h2>
+    <p>To create and manage accounts and authenticate users; provide tutoring features (sessions, assignments, submissions and messaging); connect students and parents with assigned tutors and administrators; maintain security and prevent fraud or abuse; troubleshoot and improve the App; and communicate service-related updates.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">4. How we share information</h2>
+    <p>We do not sell personal information. We share it only as needed: between tutoring participants (student/parent, tutor, and administrators where applicable) to deliver tutoring services; with service providers who help operate the App; for legal or safety reasons; and in connection with a business transfer such as a merger or sale of assets.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">5. Service providers</h2>
+    <p>We use Firebase (Google) for authentication and database services (Firebase Authentication and Cloud Firestore), and Cloudinary for file uploads and storage. These providers process data under their own privacy policies and terms.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">6. Children's privacy and parental consent</h2>
+    <p>We take children's privacy seriously. In the United States, COPPA generally requires verifiable parental consent before collecting personal information from children under 13. In India, the Digital Personal Data Protection Act requires verifiable consent of a parent or lawful guardian before processing a child's personal data, and defines a child as under 18.</p>
+    <p>Our current approach: we expect a parent, guardian, or authorized school/tutor administrator to create and manage accounts for children. If we learn we collected a child's personal information without appropriate consent, we will take steps to delete it or obtain valid consent. Parents and guardians may request to access, correct, or delete their child's personal information by contacting us (Section 12).</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">7. App Store Kids category</h2>
+    <p>If distributed in Apple's Kids category, Apple imposes additional requirements and restrictions, including around third-party data collection, analytics and advertising.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">8. Data retention</h2>
+    <p>We keep personal information only as long as necessary to provide the App and its features, maintain records for legitimate business needs, and comply with legal obligations. You may request account deletion (Section 10). Some information may be retained where required by law or for safety and security reasons.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">9. Security</h2>
+    <p>We use reasonable administrative, technical and organizational safeguards to protect information. No system is entirely secure, and we cannot guarantee absolute security.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">10. Your choices and rights (Canada, US, India)</h2>
+    <p>You can request access to, correction of, or deletion of personal information by contacting us (Section 12). You may request deletion of your account and associated data; we may need to verify your identity first. If you are in India, you may have rights as a "Data Principal" under India's data protection law, including access, correction and grievance handling.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">11. International data transfers</h2>
+    <p>Because we use global service providers, your information may be stored or processed in countries other than where you live, including wherever Firebase and Cloudinary operate. By using the App, you understand your information may be transferred internationally.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">12. Contact us</h2>
+    <p>For privacy questions or requests, including parent and guardian requests, contact us at <a href="mailto:support@scholars.quest">support@scholars.quest</a>.</p>
+    <h2 style="font-family:var(--font-display);font-size:21px;font-weight:900;color:var(--sq-ink);margin:32px 0 10px">13. Changes to this policy</h2>
+    <p style="margin-bottom:0">We may update this policy from time to time. We will update the effective date above and post the revised policy in the App. If changes are significant, we may provide additional notice.</p>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer style="background:var(--sq-ink);color:var(--sq-grey-300);padding:64px 24px 40px">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px">
+    <div style="max-width:320px">
+      <img src="assets/logo-white.png" alt="Scholar's Quest" style="height:40px;width:auto;display:block">
+      <p style="margin-top:18px;font-size:14px;font-weight:600;line-height:1.6">One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:14px">Programs</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="#" onClick="{{ goMath }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">Math tutoring</a>
+        <a href="#" onClick="{{ goEnglish }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">English tutoring</a>
+        <a href="#" onClick="{{ goDemo }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">Book a free demo</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:14px">Company</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="#" onClick="{{ goAbout }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">About</a>
+        <a href="#" onClick="{{ goContact }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">Contact</a>
+        <a href="#" onClick="{{ goLogin }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">Parent login</a>
+        <a href="#" onClick="{{ goPrivacy }}" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--sq-teal-300);margin-bottom:14px">Get in touch</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="mailto:info@scholars.quest" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">info@scholars.quest</a>
+        <a href="tel:+16095178112" style="font-size:14px;font-weight:600;color:var(--sq-grey-300)">(609) 517-8112</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;font-weight:600;color:var(--sq-grey-500)">© 2026 Scholar's Quest. All rights reserved.</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Home&quot;,&quot;Math&quot;,&quot;English&quot;,&quot;About&quot;,&quot;Contact&quot;,&quot;Demo&quot;,&quot;Login&quot;,&quot;Privacy&quot;],&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Site&quot;},&quot;showTrustStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;showFaq&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo page&quot;}}">
+const QUOTES = [
+  ["All three of mine see Kathni and no two sessions look alike. My two in Grade 2 play games with numbers while my Grade 5 gets properly pushed. Homework stopped being an argument in our house.",
+   "Mukti", "parent of two Grade 2 students and a Grade 5 student"],
+  ["My daughter was behind on reading and starting to hide it. A few months in she reads to me at bedtime without being asked. That\u2019s the part I didn\u2019t expect.",
+   "Zalak", "parent of a Grade 1 student"],
+  ["The notes after every session are what sold me. I actually know what my son worked on. My sixth-grader went from dreading math tests to telling me his score before I ask.",
+   "Riddhi", "parent of a Grade 1 and a Grade 6 student"],
+];
+
+const TOPICS = {
+  // Math K–5
+  'Number sense': ['mk5', 'Knowing what numbers mean, not just how to write them: that 40 is close to 38, that 7 × 6 must land near 42. It is the difference between a child who checks an answer and one who hands in 380.'],
+  'Times tables': ['mk5', 'Instant recall of multiplication facts up to 12 × 12, drilled in short bursts. Once these are automatic, long division and fractions stop feeling impossible.'],
+  'Fractions': ['mk5', 'Halves, quarters, thirds — comparing them, adding them, and seeing why 1/3 is bigger than 1/4 even though 4 is bigger than 3. Usually the first place a child decides maths is "not for them".'],
+  'Word problems': ['mk5', 'Turning a sentence into a sum. "There are 24 pencils shared between 4 tables" — the maths is easy, reading it is the hard part, so we practise the reading.'],
+  'Measurement': ['mk5', 'Length, weight, money, time and the units that go with them. Reading a ruler, working out change, telling how long until half past.'],
+  // Math 6–8
+  'Ratios & percent': ['m68', 'Comparing quantities and scaling them: 3 parts flour to 1 part water, 20% off £45, a recipe doubled. The same idea in three disguises, which is exactly why it trips students up.'],
+  'Pre-algebra': ['m68', 'Letters standing in for numbers. Solving 3x + 5 = 20, working with negatives and exponents — the grammar that everything in high school maths is written in.'],
+  'Geometry': ['m68', 'Angles, area, perimeter, volume and the properties of shapes. Why the angles in a triangle always add to 180, and how to find the area of a shape nobody gave you a formula for.'],
+  'Data & graphs': ['m68', 'Reading and building bar charts, line graphs and scatter plots, plus mean, median and mode. Mostly: what a graph is actually claiming, and whether it is fair.'],
+  'State testing': ['m68', 'Practice against the real format of your state assessment — question types, pacing, and the calculator rules — so the test itself is not the surprise.'],
+  // Math 9–12
+  'Algebra II': ['m912', 'Quadratics, polynomials, logarithms and functions. The year where maths stops being arithmetic with letters and starts being about relationships between quantities.'],
+  'Trigonometry': ['m912', 'Sine, cosine and tangent — the maths of triangles and anything that repeats, from ramps and roof pitches to sound waves.'],
+  'Pre-calculus': ['m912', 'Functions, sequences, limits and the unit circle: the toolkit assembled so that calculus in the autumn is a new idea, not a new language.'],
+  'Calculus': ['m912', 'Rates of change (derivatives) and accumulation (integrals). How fast something is moving right now, and how far it has travelled altogether. AP Calculus AB and BC included.'],
+  'Statistics': ['m912', 'Distributions, probability, sampling and inference — deciding what a set of data can honestly be said to prove. Includes AP Statistics free-response practice.'],
+  // English K–5
+  'Phonics': ['ek5', 'Matching letters and letter groups to sounds, then blending them into words. The route from "c-a-t" to reading "cat" without pausing.'],
+  'Fluency': ['ek5', 'Reading aloud at a natural pace with expression, not word by word. A fluent reader has attention left over to think about the meaning.'],
+  'Vocabulary': ['ek5', 'Building the stock of words a child knows and uses, and the habit of working out an unfamiliar one from the sentence around it.'],
+  'Sentences': ['ek5', 'Capital letters, full stops, and a complete thought. Turning "went the park" into "We went to the park after lunch."'],
+  'Spelling': ['ek5', 'Patterns rather than memorised lists: why it is "hopping" but "hoping", and what to do with words that break the rules.'],
+  // English 6–8
+  'Comprehension': ['e68', 'Understanding what a text says, then what it implies. Finding the main idea, using evidence, and answering the question that was actually asked.'],
+  'Grammar': ['e68', 'Punctuation, tenses, and agreement — comma splices, its vs it\u2019s, sentences that lose their subject halfway. Taught inside their own writing, not on worksheets.'],
+  'Essay structure': ['e68', 'A paragraph that makes one point and proves it, then five of them in the right order. Introduction, body, conclusion, with a thread running through.'],
+  'Creative writing': ['e68', 'Stories and descriptive writing: character, setting, tension, and an ending that is not "then I woke up".'],
+  'Speaking': ['e68', 'Reading aloud, explaining an idea, and answering a question in full sentences. Low-stakes practice for the class presentations that are not.'],
+  // English 9–12
+  'Literary analysis': ['e912', 'Reading a text closely and saying something arguable about it: how imagery, structure or narrator shape what a reader takes away — with quotes as evidence.'],
+  'Thesis writing': ['e912', 'A single sentence that makes a claim someone could disagree with, and an essay that earns it. The fix for essays that summarise instead of arguing.'],
+  'Rhetoric': ['e912', 'How a speech or article persuades — appeals, tone, structure, and loaded word choice. The core of AP Language and of the SAT reading passages.'],
+  'Timed essays': ['e912', 'Planning in four minutes and writing in forty. A repeatable process for exam essays, practised under the clock.'],
+  'Presentations': ['e912', 'Structuring a talk, holding eye contact, and handling questions without freezing. Rehearsed one-to-one before it counts.'],
+};
+
+class Component extends DCLogic {
+  state = { page: null, q: 0, demoSent: false, contactSent: false, times: {}, topic: null };
+
+  get page() { return this.state.page || this.props.startPage || 'Home'; }
+
+  go(p) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ page: p });
+      try { window.scrollTo(0, 0); } catch (err) {}
+    };
+  }
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(s => ({ q: (s.q + 1) % QUOTES.length })), 8000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+
+  renderVals() {
+    const page = this.page;
+    const q = this.state.q;
+    const dot = i => (i === q ? 'var(--sq-ink)' : 'rgba(20,18,24,.28)');
+    const t = this.state.times;
+    const toggle = k => () => this.setState(s => ({ times: Object.assign({}, s.times, { [k]: !s.times[k] }) }));
+    const topic = this.state.topic;
+    const group = topic && TOPICS[topic] ? TOPICS[topic][0] : null;
+    return {
+      pickTopic: e => {
+        const key = (e.currentTarget.textContent || '').trim();
+        this.setState(s => ({ topic: s.topic === key ? null : key }));
+      },
+      topicTitle: topic || '',
+      topicBody: topic && TOPICS[topic] ? TOPICS[topic][1] : '',
+      panelMK5: group === 'mk5', panelM68: group === 'm68', panelM912: group === 'm912',
+      panelEK5: group === 'ek5', panelE68: group === 'e68', panelE912: group === 'e912',
+      navLinks: ['Home', 'Math', 'English', 'About', 'Contact'],
+      page,
+      nav: p => this.go(p)(),
+      goHome: this.go('Home'), goMath: this.go('Math'), goEnglish: this.go('English'),
+      goAbout: this.go('About'), goContact: this.go('Contact'), goDemo: this.go('Demo'),
+      goLogin: this.go('Login'), goPrivacy: this.go('Privacy'),
+      isHome: page === 'Home', isMath: page === 'Math', isEnglish: page === 'English',
+      isAbout: page === 'About', isContact: page === 'Contact', isDemo: page === 'Demo',
+      isLogin: page === 'Login', isPrivacy: page === 'Privacy',
+      showTrustStrip: this.props.showTrustStrip !== false,
+      showFaq: this.props.showFaq !== false,
+      quoteText: QUOTES[q][0], quoteName: QUOTES[q][1], quoteRole: QUOTES[q][2],
+      dot0: dot(0), dot1: dot(1), dot2: dot(2),
+      setQ0: () => this.setState({ q: 0 }), setQ1: () => this.setState({ q: 1 }), setQ2: () => this.setState({ q: 2 }),
+      prevQuote: () => this.setState(s => ({ q: (s.q + QUOTES.length - 1) % QUOTES.length })),
+      nextQuote: () => this.setState(s => ({ q: (s.q + 1) % QUOTES.length })),
+      gradeOptions: ['Kindergarten', 'Grade 1\u20132', 'Grade 3\u20135', 'Grade 6\u20138', 'Grade 9\u201310', 'Grade 11\u201312'],
+      subjectOptions: ['Math', 'English', 'Both', 'Test prep'],
+      topicOptions: ['Starting tutoring', 'Scheduling', 'Test prep', 'Pricing', 'Something else'],
+      demoSent: this.state.demoSent, demoOpen: !this.state.demoSent,
+      contactSent: this.state.contactSent, contactOpen: !this.state.contactSent,
+      sendDemo: () => this.setState({ demoSent: true }),
+      resetDemo: () => this.setState({ demoSent: false }),
+      sendContact: () => this.setState({ contactSent: true }),
+      resetContact: () => this.setState({ contactSent: false }),
+      t0: !!t['Weekday mornings'], t1: !!t['Weekday evenings'], t2: !!t['Weekends'],
+      toggleT0: toggle('Weekday mornings'), toggleT1: toggle('Weekday evenings'), toggleT2: toggle('Weekends'),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
