@@ -25,7 +25,7 @@ close-match substitution already used for the fonts (see `tokens/fonts.css`
 in the design bundle).
 
 ## Still needs your attention
-- **Images**: every photo spot (`home` hero, About founder portrait, Math/English session photos) is a placeholder box — no real photos were available to pull in. Replace the `.image-slot` divs in the HTML with real `<img>` tags once you have photos.
+- **Images**: the home, Math and English hero photos are real (`assets/hero-home.jpg`, `assets/hero-math.jpg`, `assets/hero-english.jpg`). The About page founder portrait is still a placeholder box — swap the `.image-slot` div in `about.html` for a real `<img>` (see `.hero-photo` in `css/style.css` for the pattern) once you have one.
 - **Forms don't submit anywhere yet.** `contact.html` and `demo.html` show a "success" message on submit (nice for previewing), but nothing is actually sent. Wire the `<form>` up to Formspree/Getform, or point it at your booking system, before relying on it.
 - **Login button** links to `login.html`, which explains the portal is in development. Point it at the real portal once that's live.
 - **Home hero still shows the "Session notes · Grade 5" card and "200+ students" chip** next to the hero photo. The design chat log briefly discussed removing this pairing, but the exported `.dc.html` kept it — this build matches the exported file. Delete `.hero-proof-row` in `index.html` if you'd rather drop it.
