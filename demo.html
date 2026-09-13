@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Demo | Scholar's Quest</title>
+<meta name="description" content="Book a free demo tutoring class with Scholar's Quest.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="siteNav">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="english.html">English</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-secondary">Parent login</a>
+      <a href="demo.html" class="btn btn-primary">Book a free demo</a>
+    </div>
+  </div>
+  <div class="header-divider"></div>
+</header>
+
+<main>
+
+<section class="section section-top">
+  <div class="narrow">
+    <div class="eyebrow">Free demo class</div>
+    <h1 style="font-size:clamp(36px,4.6vw,52px);margin-bottom:18px;">A real session, before you decide anything</h1>
+    <p style="font-size:17px;color:var(--color-neutral-300);">Forty-five minutes with a tutor, matched to your child&rsquo;s grade and subject. No card, no obligation, and you keep the notes either way.</p>
+  </div>
+</section>
+
+<section class="section" style="margin-top:24px;">
+  <div class="split">
+    <div>
+      <h2 style="font-size:26px;margin-bottom:28px;">What happens</h2>
+      <div class="numstep"><div class="n">01</div><div><h3>You send the details</h3><p>Grade, subject, and what&rsquo;s been hard lately. The form opposite takes a minute.</p></div></div>
+      <div class="numstep"><div class="n">02</div><div><h3>We match a tutor and confirm a time</h3><p>Usually within one business day, from the times you marked as workable.</p></div></div>
+      <div class="numstep"><div class="n">03</div><div><h3>Your child works, we watch how</h3><p>A short diagnostic, then real problems. Join a video link from any laptop or tablet, with nothing to install.</p></div></div>
+      <div class="numstep"><div class="n">04</div><div><h3>You get notes and a plan</h3><p>What we saw, where the gap is, and what we&rsquo;d do about it. Then it&rsquo;s your call.</p></div></div>
+    </div>
+
+    <div class="form-panel">
+      <div id="demoSuccess" class="form-success" hidden>
+        <div class="rule"></div>
+        <h2>Request received</h2>
+        <p>We&rsquo;ll be in touch within one business day with a tutor and a time. If it&rsquo;s urgent, call <a href="tel:+16095178112">(609) 517-8112</a>.</p>
+        <button class="btn btn-secondary" data-form-reset>Send another request</button>
+      </div>
+      <form data-placeholder-form data-success-target="demoSuccess">
+        <h2 style="font-size:24px;margin-bottom:6px;">Request a demo</h2>
+        <p style="font-size:13px;color:var(--color-neutral-500);margin:0 0 24px;">All fields optional except email, so tell us what you can.</p>
+        <div class="field"><label for="d-name">Parent name</label><input class="input" id="d-name" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="d-email">Email</label><input class="input" id="d-email" type="email" required placeholder="you@example.com"></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px;">
+          <div class="field"><label for="d-grade">Child&rsquo;s grade</label>
+            <select class="input" id="d-grade">
+              <option>Kindergarten</option><option>Grade 1&ndash;2</option><option>Grade 3&ndash;5</option><option>Grade 6&ndash;8</option><option>Grade 9&ndash;10</option><option>Grade 11&ndash;12</option>
+            </select>
+          </div>
+          <div class="field"><label for="d-subject">Subject</label>
+            <select class="input" id="d-subject">
+              <option>Math</option><option>English</option><option>Both</option><option>Test prep</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Times that usually work</label>
+          <div class="checkrow">
+            <label><input type="checkbox">Weekday mornings</label>
+            <label><input type="checkbox">Weekday evenings</label>
+            <label><input type="checkbox">Weekends</label>
+          </div>
+        </div>
+        <div class="field"><label for="d-notes">What&rsquo;s been hard lately?</label><textarea class="input" id="d-notes" rows="4" placeholder="e.g. fractions, or essays that lose the thread halfway"></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block" style="font-size:15px;padding:12px;">Request my free demo</button>
+        <p class="form-note" style="margin-top:12px;">This form isn&rsquo;t connected to a booking system yet. Wire it to your scheduler or a form service to go live.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top:88px;">
+  <div class="hr" style="margin-bottom:52px;"></div>
+  <h2 class="section-title">Questions parents ask</h2>
+  <p class="section-sub" style="margin-bottom:32px;">Draft answers. Correct anything that doesn&rsquo;t match how you actually run sessions.</p>
+  <div class="faq-list">
+    <details><summary>How long is a session, and how often?</summary><p>Sessions run 45 or 60 minutes. Most families book once or twice a week; test-prep students often go twice weekly in the two months before the exam.</p></details>
+    <details><summary>What if we need to reschedule?</summary><p>Reschedule or cancel with reasonable notice and there&rsquo;s no charge and no penalty. Illness and school events happen; we&rsquo;d rather move the session than waste it.</p></details>
+    <details><summary>How is a tutor matched to my child?</summary><p>We match on subject and grade level first, then on temperament. A child who freezes up needs a different pace than one who races ahead. If the fit isn&rsquo;t right after a session or two, tell us and we&rsquo;ll change it.</p></details>
+    <details><summary>What actually happens in the demo class?</summary><p>A short diagnostic to see where your child is, then real work on something they&rsquo;re currently stuck on. It&rsquo;s a teaching session, not a sales call, and you get written notes afterwards.</p></details>
+    <details><summary>How will I know it&rsquo;s working?</summary><p>You get notes after every session covering what we worked on and what to practise, plus a progress summary you can compare against school reports.</p></details>
+    <details><summary>Should I sit in on sessions?</summary><p>You&rsquo;re welcome to, and for younger children it often helps for the first session. After that most students concentrate better on their own, and the notes keep you in the loop.</p></details>
+  </div>
+  <p style="font-size:14px;color:var(--color-neutral-400);margin:28px 0 0;">Something not answered here? <a href="contact.html">Send us the question</a>. We reply to every one.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="hr" style="margin-top:0;"></div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand">Scholar<span class="accent">&rsquo;</span>s Quest</span>
+      <p>One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Programs</div>
+      <div class="footer-links">
+        <a href="math.html">Math tutoring</a>
+        <a href="english.html">English tutoring</a>
+        <a href="demo.html">Book a free demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Get in touch</div>
+      <div class="footer-links">
+        <a href="mailto:info@scholars.quest">info@scholars.quest</a>
+        <a href="tel:+16095178112">(609) 517-8112</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-copy">&copy; <span id="year"></span> Scholar&rsquo;s Quest. All rights reserved.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
