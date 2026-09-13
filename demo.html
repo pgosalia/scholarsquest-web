@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Demo | Scholar's Quest</title>
+<meta name="description" content="Book a free, real 60-minute demo tutoring session in Math or English. No card required.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo-primary.png" alt="Scholar's Quest"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="siteNav">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="english.html">English</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-sm btn-outline">Parent login</a>
+      <a href="demo.html" class="btn btn-sm btn-primary">Book a free demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" style="padding:64px 24px 32px">
+  <div class="max-680">
+    <div class="eyebrow">Free demo class</div>
+    <h1 style="font-size:clamp(32px,4.4vw,48px);letter-spacing:-.03em;line-height:1.06;margin:0 0 18px">A real session, before you decide anything</h1>
+    <p style="font-size:18px;line-height:1.65;font-weight:600;margin:0">Sixty minutes with a tutor, matched to your child&rsquo;s grade and subject. No card, no obligation, and you keep the notes either way.</p>
+  </div>
+</section>
+
+<section class="section" style="padding:0 24px 72px">
+  <div class="split">
+    <div class="demo-steps">
+      <h2 style="font-size:26px;letter-spacing:-.02em;margin:0 0 26px">What happens</h2>
+      <div class="numstep"><span class="n">01</span><div><h3>You send the details</h3><p>Grade, subject, and what&rsquo;s been hard lately. The form opposite takes a minute.</p></div></div>
+      <div class="numstep"><span class="n">02</span><div><h3>We match a tutor and confirm a time</h3><p>Usually within one business day, from the times you marked as workable.</p></div></div>
+      <div class="numstep"><span class="n">03</span><div><h3>Your child works, we watch how</h3><p>A short diagnostic, then real problems. Join a video link from any laptop or tablet, with nothing to install.</p></div></div>
+      <div class="numstep"><span class="n">04</span><div><h3>You get notes and a plan</h3><p>What we saw, where the gap is, and what we&rsquo;d do about it. Then it&rsquo;s your call.</p></div></div>
+    </div>
+
+    <div class="form-panel">
+      <div id="demoSuccess" hidden>
+        <div class="alert">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></svg>
+          <div>
+            <h3>Request received</h3>
+            <p>We&rsquo;ll be in touch within one business day with a tutor and a time. If it&rsquo;s urgent, call (609) 517-8112.</p>
+          </div>
+        </div>
+        <div style="margin-top:18px">
+          <button type="button" class="btn btn-sm btn-outline" data-form-reset>Send another request</button>
+        </div>
+      </div>
+
+      <form data-placeholder-form data-success-target="demoSuccess">
+        <h2 style="margin:0">Request a demo</h2>
+        <p class="sub" style="margin-bottom:14px">All fields optional except email, so tell us what you can.</p>
+
+        <label class="field">
+          <span class="label">Parent name</span>
+          <span class="field-box">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            <input type="text" placeholder="Your name">
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="label">Email</span>
+          <span class="field-box">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="email" placeholder="you@example.com" required>
+          </span>
+        </label>
+
+        <div class="field-row">
+          <label class="field" style="margin-bottom:0">
+            <span class="label">Child&rsquo;s grade</span>
+            <span class="field-box">
+              <select>
+                <option>Kindergarten</option>
+                <option>Grade 1&ndash;2</option>
+                <option>Grade 3&ndash;5</option>
+                <option>Grade 6&ndash;8</option>
+                <option>Grade 9&ndash;10</option>
+                <option>Grade 11&ndash;12</option>
+              </select>
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </label>
+          <label class="field" style="margin-bottom:0">
+            <span class="label">Subject</span>
+            <span class="field-box">
+              <select>
+                <option>Math</option>
+                <option>English</option>
+                <option>Both</option>
+                <option>Test prep</option>
+              </select>
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </label>
+        </div>
+
+        <div class="field">
+          <div class="label">Times that usually work</div>
+          <div class="check-row">
+            <label class="check-label"><input type="checkbox"><span class="check-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Weekday mornings</label>
+            <label class="check-label"><input type="checkbox"><span class="check-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Weekday evenings</label>
+            <label class="check-label"><input type="checkbox"><span class="check-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Weekends</label>
+          </div>
+        </div>
+
+        <label class="field">
+          <span class="label">What&rsquo;s been hard lately?</span>
+          <textarea class="textbox" rows="4" placeholder="e.g. fractions, or essays that lose the thread halfway"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-block btn-primary btn-pop" style="margin-bottom:14px">Request my free demo</button>
+        <p class="form-note">This form isn&rsquo;t connected to a booking system yet. Wire it to your scheduler or a form service to go live.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding:0 24px 88px">
+  <div style="height:1px;background:var(--border-subtle);margin:0 0 48px"></div>
+  <h2 style="font-size:clamp(26px,3.2vw,34px);margin:0">Questions parents ask</h2>
+  <p style="font-size:15.5px;font-weight:600;color:var(--text-muted);margin:8px 0 30px">Draft answers. Correct anything that doesn&rsquo;t match how you actually run sessions.</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How long is a session, and how often?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">Sessions run 60 minutes. Most families book once or twice a week; test-prep students often go twice weekly in the two months before the exam.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What if we need to reschedule?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">Reschedule or cancel with reasonable notice and there&rsquo;s no charge and no penalty. Illness and school events happen; we&rsquo;d rather move the session than waste it.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How is a tutor matched to my child?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">We match on subject and grade level first, then on temperament. A child who freezes up needs a different pace than one who races ahead. If the fit isn&rsquo;t right after a session or two, tell us and we&rsquo;ll change it.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What actually happens in the demo class?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">A short diagnostic to see where your child is, then real work on something they&rsquo;re currently stuck on. It&rsquo;s a teaching session, not a sales call, and you get written notes afterwards.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How will I know it&rsquo;s working?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">You get notes after every session covering what we worked on and what to practise, plus a progress summary you can compare against school reports.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I sit in on sessions?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="body">You&rsquo;re welcome to, and for younger children it often helps for the first session. After that most students concentrate better on their own, and the notes keep you in the loop.</div>
+    </details>
+  </div>
+  <p style="font-size:15px;font-weight:600;margin:28px 0 0">Something not answered here? <a href="contact.html">Send us the question</a>. We reply to every one.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-white.png" alt="Scholar's Quest">
+      <p>One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Programs</div>
+      <div class="footer-links">
+        <a href="math.html">Math tutoring</a>
+        <a href="english.html">English tutoring</a>
+        <a href="demo.html">Book a free demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Parent login</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Get in touch</div>
+      <div class="footer-links">
+        <a href="mailto:info@scholars.quest">info@scholars.quest</a>
+        <a href="tel:+16095178112">(609) 517-8112</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; <span id="year"></span> Scholar&rsquo;s Quest. All rights reserved.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

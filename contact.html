@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Scholar's Quest</title>
+<meta name="description" content="Questions about grade levels, scheduling, test prep, or how Scholar's Quest would handle a particular problem. A real person reads every message.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo-primary.png" alt="Scholar's Quest"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="siteNav">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="math.html">Math</a></li>
+      <li><a href="english.html">English</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-sm btn-outline">Parent login</a>
+      <a href="demo.html" class="btn btn-sm btn-primary">Book a free demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" style="padding:64px 24px 32px">
+  <div class="max-640">
+    <div class="eyebrow">Contact</div>
+    <h1 style="font-size:clamp(32px,4.4vw,48px);letter-spacing:-.03em;line-height:1.06;margin:0 0 18px">Ask us anything</h1>
+    <p style="font-size:18px;line-height:1.65;font-weight:600;margin:0">Questions about grade levels, scheduling, test prep or how we&rsquo;d handle a particular problem. A real person reads every message.</p>
+  </div>
+</section>
+
+<section class="section" style="padding:0 24px 88px">
+  <div class="split">
+    <div class="contact-list">
+      <div class="contact-card contact-card-teal">
+        <div class="head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span>Email</span>
+        </div>
+        <a href="mailto:info@scholars.quest" class="value">info@scholars.quest</a>
+        <p class="note">Replies within one business day.</p>
+      </div>
+      <div class="contact-card contact-card-pink">
+        <div class="head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Phone</span>
+        </div>
+        <a href="tel:+16095178112" class="value">(609) 517-8112</a>
+        <p class="note">Call or text. Fastest for scheduling questions.</p>
+      </div>
+      <div class="contact-card contact-card-cream">
+        <h3>Ready to start?</h3>
+        <p class="note-cta">Skip the back-and-forth and book the free demo directly.</p>
+        <a href="demo.html" class="btn btn-primary">Book a free demo class
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div id="contactSuccess" hidden>
+        <div class="alert">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5"/></svg>
+          <div>
+            <h3>Message sent</h3>
+            <p>Thanks, we&rsquo;ll reply within one business day.</p>
+          </div>
+        </div>
+        <div style="margin-top:18px">
+          <button type="button" class="btn btn-sm btn-outline" data-form-reset>Write another</button>
+        </div>
+      </div>
+
+      <form data-placeholder-form data-success-target="contactSuccess">
+        <h2 style="margin:0 0 14px">Send a message</h2>
+
+        <label class="field">
+          <span class="label">Name</span>
+          <span class="field-box">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            <input type="text" placeholder="Your name">
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="label">Email</span>
+          <span class="field-box">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="email" placeholder="you@example.com" required>
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="label">What&rsquo;s this about?</span>
+          <span class="field-box">
+            <select>
+              <option>Starting tutoring</option>
+              <option>Scheduling</option>
+              <option>Test prep</option>
+              <option>Pricing</option>
+              <option>Something else</option>
+            </select>
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="label">Message</span>
+          <textarea class="textbox" rows="5" placeholder="Tell us a bit about your child's grade and what they're finding hard"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-block btn-primary btn-pop" style="margin-bottom:14px">Send message</button>
+        <p class="form-note">This form isn&rsquo;t connected to an inbox yet. Wire it to a form service, or use the email and phone opposite in the meantime.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-white.png" alt="Scholar's Quest">
+      <p>One-on-one online tutoring in Math and English for students in Kindergarten through Grade 12, including SAT, ACT and AP preparation.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Programs</div>
+      <div class="footer-links">
+        <a href="math.html">Math tutoring</a>
+        <a href="english.html">English tutoring</a>
+        <a href="demo.html">Book a free demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Parent login</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Get in touch</div>
+      <div class="footer-links">
+        <a href="mailto:info@scholars.quest">info@scholars.quest</a>
+        <a href="tel:+16095178112">(609) 517-8112</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; <span id="year"></span> Scholar&rsquo;s Quest. All rights reserved.</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
