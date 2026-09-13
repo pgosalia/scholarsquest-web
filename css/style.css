@@ -167,6 +167,9 @@ img{max-width:100%}
 .image-slot-pink{background:var(--sq-pink-100)}
 .hero-home .image-slot{height:360px}
 
+.hero-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
 .hero-proof-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
 .notes-card{flex:1 1 200px;background:var(--sq-white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:16px}
 .notes-card .title{font-size:13px;font-weight:900;color:var(--sq-ink)}
